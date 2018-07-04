@@ -24,9 +24,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
- '/': 'DashboardController.viewDashboard',
- 'get /miner/:minerAddress/worker/:workerName': 'DashboardController.viewWorkerDetail',
-
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
@@ -42,12 +39,6 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-  'post /api/worker/collect': 'CollectingDataController.collectWorkerDataAction',
-  'post /api/worker/collectOldest': 'CollectingDataController.updateOldestWorkerAction',
-  'post /api/worker/:workerId/update': 'LogicalController.updateWorkerDetail',
-  'post /api/miner/:minerAddress/collectPayout': 'CollectingDataController.collectMinerPayoutAction',
-  
-  'get /api/worker/updateLatest' : 'CollectingDataController.updateOldestWorkerAction',
 
 
 

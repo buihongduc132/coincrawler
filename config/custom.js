@@ -20,4 +20,17 @@ module.exports.custom = {
   // stripeSecret: 'sk_test_Zzd814nldl91104qor5911gjald',
   // …
 
+  apiConfigs: {
+    default: {
+      tickInterval: 60000,
+      smallTickInterval: 1000,
+    }
+  },
+
+  api: {
+    marketSummary: {
+      bittrex: "https://bittrex.com/api/v1.1/public/getmarketsummaries"
+    }
+  }
+
 };

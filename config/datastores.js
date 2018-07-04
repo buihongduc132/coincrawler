@@ -49,7 +49,7 @@ module.exports.datastores = {
     *                                                                          *
     ***************************************************************************/
     adapter: 'sails-mysql',
-    url: 'mysql://root:12341234@127.0.0.1:3306/MiningSolution-Monitor',
+    url: 'mysql://root:12341234@127.0.0.1:3306/CoinCrawler',
 
   },
 

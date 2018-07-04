@@ -14,7 +14,9 @@ const seedData = require('./seed/data');
 module.exports.bootstrap = function bootstrap(done) {
   
   sails.on('lifted', function () {
-    
+    sails.helpers.data.get.marketSummary.bittrex().then((data) => {
+
+    });
   });
   // By convention, this is a good place to set up fake data during development.
 
