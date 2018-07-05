@@ -14,9 +14,11 @@ const seedData = require('./seed/data');
 module.exports.bootstrap = function bootstrap(done) {
   
   sails.on('lifted', function () {
-    sails.helpers.data.get.marketSummary.bittrex().then((data) => {
-
-    });
+    setInterval(() => {
+      sails.helpers.data.get.marketSummary.bittrex().then((data) => {
+        
+      });
+    }, sails.config.custom.apiConfigs.default.tickInterval);
   });
   // By convention, this is a good place to set up fake data during development.
 

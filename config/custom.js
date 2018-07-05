@@ -22,7 +22,7 @@ module.exports.custom = {
 
   apiConfigs: {
     default: {
-      tickInterval: 60000,
+      tickInterval: 30000,
       smallTickInterval: 1000,
     }
   },

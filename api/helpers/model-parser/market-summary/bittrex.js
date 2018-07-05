@@ -18,26 +18,44 @@ module.exports = {
 
   },
 
-  sync: true, 
+  sync: true,
 
 
   fn: function (inputs, exits) {
     let data = inputs.data;
 
-    // All done.
-    return exits.success({
-      pair: data.MarketName,
-      volume: data.Volume,
-      baseVolume: data.BaseVolume,
-      bid: data.Bid,
-      ask: data.Ask,
-      last: data.Last,
-      dataTime: data.TimeStamp,
-      exchanger: "bittrex",
-    });
+    let convertedPair = convertPair(data.MarketName);
 
+    return exits.success({
+      name: convertedPair.name,
+      exchange: "bittrex",
+      pair: convertedPair.pair,
+      baseCurrency: convertedPair.base,
+      volume: null,
+      baseVolume: null,
+      top: null,
+      price: null,
+      origin: {
+        name: data.MarketName,
+        volume: data.Volume,
+        baseVolume: data.BaseVolume,
+        price: data.Last,
+        time: data.TimeStamp
+      },
+      time: sails.helpers.convert.stringToTime(data.TimeStamp),
+    });
   }
 };
+
+function convertPair(originalPair) {
+  let currencies = originalPair.split('-');
+
+  return {
+    name: currencies[1],
+    base: currencies[0],
+    pair: `${currencies[1]}/${currencies[0]}`,
+  }
+}
 
 // "MarketName": "ETH-WAX",
 // "High": 0.00036955,

@@ -12,14 +12,20 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    time: { type: 'string' },
+    exchange: { type: 'string' },
     pair: { type: 'string' },
-    volume: { type: 'number' },
-    baseVolume: { type: 'number' },
-    bid: { type: 'number' },
-    ask: { type: 'number' },
-    last: { type: 'number' },
-    dataTime: { type: 'string' },
-    exchanger: { type: 'string' },
+    name: { type: 'string' },
+    volume: {
+      type: 'number',
+      columnType: 'decimal(16,0)'
+    },
+    top: { type: 'number', allowNull: true },
+    price: {
+      type: 'number',
+      allowNull: true,
+      columnType: 'decimal(16,3)'
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
