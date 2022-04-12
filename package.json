@@ -10,7 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "async": "^2.0.1",
     "dateformat": "^3.0.3",
-    "forever-monitor": "^1.7.1",
+    "forever-monitor": "^3.0.2",
     "grunt": "1.0.1",
     "lodash": "^4.17.10",
     "request": "^2.87.0",
